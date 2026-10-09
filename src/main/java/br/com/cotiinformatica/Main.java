@@ -1,17 +1,32 @@
 package br.com.cotiinformatica;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import br.com.cotiinformatica.services.FuncionarioService;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+import java.util.Scanner;
+
+public class Main {
+
+    static void main() {
+
+        var funcionarioService = new FuncionarioService();
+        var scanner = new Scanner(System.in);
+
+        System.out.println("\nMENU DE OPÇÕES:\n");
+
+        System.out.println("\t(1) CADASTRAR UM FUNCIONÁRIO");
+        System.out.println("\t(2) CONSULTAR TODOS OS FUNCIONÁRIOS");
+
+        System.out.print("\nINFORME A OPÇÃO DESEJADA: ");
+        var opcao = Integer.parseInt(scanner.nextLine());
+
+        switch (opcao)
+        {
+            case 1:
+                funcionarioService.cadastrarFuncionario();
+                break;
+            default:
+                System.out.println("\nOPÇÃO INVÁLIDA!");
+                break;
         }
     }
 }
