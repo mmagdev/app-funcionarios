@@ -13,8 +13,8 @@ public class Main {
 
         System.out.println("\nMENU DE OPÇÕES:\n");
 
-        System.out.println("\t(1) CADASTRAR UM FUNCIONÁRIO");
-        System.out.println("\t(2) CONSULTAR TODOS OS FUNCIONÁRIOS");
+        System.out.println("\t(1) Cadastrar um funcionário");
+        System.out.println("\t(2) Listar todos os funcionários");
 
         System.out.print("\nINFORME A OPÇÃO DESEJADA: ");
         var opcao = Integer.parseInt(scanner.nextLine());
@@ -23,6 +23,9 @@ public class Main {
         {
             case 1:
                 funcionarioService.cadastrarFuncionario();
+                break;
+            case 2:
+                // TODO: Implement listagem de funcionários
                 break;
             default:
                 System.out.println("\nOPÇÃO INVÁLIDA!");
